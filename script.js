@@ -33,7 +33,7 @@ load();
 function cat1() {
 
   let Catogrey1 = `Catogrey1`;
-  let c;
+  let c=0;
   let cate = [];
   const name = [];
   let content = '';
@@ -43,17 +43,18 @@ function cat1() {
 
 
     if (cate[i].charAt(8) === Catogrey1.charAt(8)) {
-++c;
 
-      name[i] = document.querySelectorAll(".name")[i].textContent.slice(0);
-      console.log(name[i]);
-      console.log(cate[i]);
-
+      
+      name[c] = document.querySelectorAll(".name")[i].textContent.slice(0);
+      // console.log(name[i]);
+      // console.log(cate[i]);
+      c++;
 
     }
   }
-
-  for (let i = 0; i <= name.length; i++) {
+  
+console.log(name.length);
+  for (let i = 0; i <= name.length-1; i++) {
     content += `
     <div class="card" style="width: 25rem;margin:0 auto;top:6em;">
 <ul class="list-group list-group-flush">
