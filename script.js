@@ -54,11 +54,16 @@ function cat1() {
   }
   
 console.log(name.length);
+
   for (let i = 0; i <= name.length-1; i++) {
+    const firstLetters = name[i]
+    .split(' ')
+    .map(word => word[0])
+    .join('');
     content += `
     <div class="card" style="width: 25rem;margin:0 auto;top:6em;">
 <ul class="list-group list-group-flush">
-<li class="list-group-item"><span class="circle">${name[i]}</span> <span class="name">  ${name[i]}   </span><a href="#" class="btn btn-primary btncate">${cate[i]} </a> 
+<li class="list-group-item"><span class="circle">${firstLetters}</span> <span class="name">  ${name[i]}   </span><a href="#" class="btn btn-primary btncate">Catogrey1 </a> 
   </li>
 
 </ul>
