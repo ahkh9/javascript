@@ -30,45 +30,43 @@ async function load() {
 load();
 
 
-function cat1(e) {
+ function cat1(e) {
 
-    var Catogrey1 = 'Catogrey1';
-    var name1 = [];
-    for (let i = 0; i <= 9; i++) {
-        console.log(i);
-        console.log(document.querySelectorAll(".btncate")[i].textContent);
-        name1[i] = document.querySelectorAll(".btncate")[i].text;
-        console.log(name1[i].toString());
-        //    e. preventDefault();
-       for(let o =0;o< name1.length;o++){
-        if (name1[o].toString() == Catogrey1) {
-            const name = [];
-
-            name[o] = document.querySelectorAll(".name")[o].textContent;
-            console.log(name[o]);
-
-        }}
-    }
+    var Catogrey1 = `Catogrey1`;
+    let cate = [];
+    const name = [];
     let content = '';
-    for (let index = 0; index < name1.length; index++) {
-        content += `
-          <div class="card" style="width: 25rem;margin:0 auto;top:6em;">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><span class="circle">${name1[index].charAt(0)}</span> <span class="name">  ${name1[index]}   </span><a href="#" class="btn btn-primary btncate">Category1 </a> 
-        </li>
-    
-  </ul>
-</div>
-          `
+   for (  let i = 0; i <= 9; i++) {
+  
+       cate[i] = document.querySelectorAll(".btncate")[i].text.slice(0);
+
+
+        if (cate[i].charAt(8) === Catogrey1.charAt(8)) {
+
+
+            name[i] = document.querySelectorAll(".name")[i].textContent.slice(0);
+            console.log(name[i]);
+
+
+            content += `
+                  <div class="card" style="width: 25rem;margin:0 auto;top:6em;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="circle">${name[i].charAt(0)}</span> <span class="name">  ${name[i]}   </span><a href="#" class="btn btn-primary btncate">Category1 </a> 
+                </li>
+            
+          </ul>
+        </div>
+                  `
+            document.querySelector("#exmp").innerHTML = content;
+        }
     }
-
-
-    document.querySelector("#exmp").innerHTML = content;
-    let p = 1;
-    p++;
-    console.log(p);
-
-
 }
+
+
+
+
+
+
+
 
 // cat1();
